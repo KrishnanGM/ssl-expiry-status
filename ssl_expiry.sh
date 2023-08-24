@@ -3,6 +3,8 @@
 set -x
 set -e
 
+echo "SLACK_WEBHOOK_URL: $SLACK_WEBHOOK_URL"
+
 check_ssl_expiry() {
   domain="$1"
   expiry_date=$(openssl s_client -servername "$domain" -connect "$domain":443 2>/dev/null | openssl x509 -noout -enddate | cut -d= -f2)
@@ -19,6 +21,8 @@ send_slack_alert() {
   domain="$1"
   remaining_days="$2"
   message="SSL Expiry Alert\n   * Domain : $domain\n   * Warning : The SSL certificate for $domain will expire in $remaining_days days."
+
+  echo "Constructed curl command: curl -X POST -H 'Content-type: application/json' --data '{ \"text\": \"$message\" }' \"$SLACK_WEBHOOK_URL\""
 
   curl -X POST -H 'Content-type: application/json' --data "{
     \"text\": \"$message\"
