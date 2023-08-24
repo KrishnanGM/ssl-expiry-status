@@ -1,0 +1,25 @@
+name: SSL Expiry Status
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  check_ssl_expiry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Bash
+        shell: bash
+
+      - name: Run SSL check script
+        run: |
+          ls -l
+          chmod +x ssl_check.sh
+          ./ssl_check.sh
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
