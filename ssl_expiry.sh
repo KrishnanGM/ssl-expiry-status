@@ -29,7 +29,7 @@ send_slack_alert() {
   }" "$SLACK_WEBHOOK_URL"
 }
 
-while IFS= read -r domain || [[ -n "$domain" ]]; do
+  while IFS= read -r domain || [[ -n "$domain" ]]; do
   if [ -n "$domain" ]; then
     echo "Processing domain: $domain"
     check_ssl_expiry "$domain"
