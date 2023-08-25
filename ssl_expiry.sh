@@ -32,4 +32,3 @@ while IFS= read -r domain || [[ -n "$domain" ]]; do
     check_ssl_expiry "$domain"
   fi
 done < "$(dirname "$0")/domains.txt"
-
