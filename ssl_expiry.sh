@@ -1,9 +1,6 @@
 #!/bin/bash
 
-set -x
-set -e
-
-echo "SLACK_WEBHOOK_URL: $SLACK_WEBHOOK_URL"
+SLACK_WEBHOOK_URL="${SLACK_WEBHOOK_URL}"
 
 check_ssl_expiry() {
   domain="$1"
@@ -29,9 +26,10 @@ send_slack_alert() {
   }" "$SLACK_WEBHOOK_URL"
 }
 
-  while IFS= read -r domain || [[ -n "$domain" ]]; do
+while IFS= read -r domain || [[ -n "$domain" ]]; do
   if [ -n "$domain" ]; then
     echo "Processing domain: $domain"
     check_ssl_expiry "$domain"
   fi
 done < "$(dirname "$0")/domains.txt"
+
