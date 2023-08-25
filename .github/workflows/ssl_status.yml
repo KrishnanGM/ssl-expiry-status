@@ -10,6 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Set up Bash
+        run: bash
         shell: bash
       - name: Run SSL check script
         run: |
