@@ -13,7 +13,7 @@ jobs:
       - name: Run SSL check script
         run: |
           ls -l
-          chmod +x ssl_check.sh
-          ./ssl_check.sh
+          chmod +x ssl_expiry.sh
+          ./ssl_expiry.sh
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
