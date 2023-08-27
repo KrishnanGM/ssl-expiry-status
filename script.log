@@ -1,8 +1,0 @@
-Processing domain: santhoshsandy.in
-Domain: santhoshsandy.in, Expiry Date: Oct  8 23:59:59 2023 GMT, Remaining Days: 42
-Constructed curl command: curl -X POST -H 'Content-type: application/json' --data '{ "text": "SSL Expiry Alert\n   * Domain : santhoshsandy.in\n   * Warning : The SSL certificate for santhoshsandy.in will expire in 42 days." }' "https://hooks.slack.com/services/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"
-SLACK_WEBHOOK_URL: https://hooks.slack.com/services/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
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   148  100     2  100   146     23   1712 --:--:-- --:--:-- --:--:--  1741
-okProcessing domain: google.com
