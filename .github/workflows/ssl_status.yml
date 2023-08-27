@@ -1,7 +1,7 @@
 name: SSL Expiry Status
 on:
   schedule:
-    - cron: 0 0 * * *
+    - cron: '0 0 * * *'
 jobs:
   check_ssl_expiry:
     runs-on: ubuntu-latest
