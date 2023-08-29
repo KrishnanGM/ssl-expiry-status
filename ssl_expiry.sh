@@ -1,6 +1,5 @@
 #!/bin/bash
 set -x
-set -e
 
 
 SLACK_WEBHOOK_URL="${SLACK_WEBHOOK_URL_SECRET}"
